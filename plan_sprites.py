@@ -21,3 +21,4 @@ class GameSprite(pygame.sprite.Sprite):
 
         #默认在垂直方向移动
         self.rect.y += self.speed
+
