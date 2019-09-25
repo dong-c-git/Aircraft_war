@@ -57,15 +57,15 @@ class MyIterator(object):
         return self
 
 
-if __name__ == '__main__':
-    mylist = MyList()
-    mylist.add(1)
-    mylist.add(2)
-    mylist.add(3)
-    mylist.add(4)
-    mylist.add(5)
-    for num in mylist:
-        print(num)
+# if __name__ == '__main__':
+#     mylist = MyList()
+#     mylist.add(1)
+#     mylist.add(2)
+#     mylist.add(3)
+#     mylist.add(4)
+#     mylist.add(5)
+#     for num in mylist:
+#         print(num)
 
 #迭代器是实现斐波那契数列：
 class Feibonaqi(object):
@@ -96,3 +96,21 @@ class Feibonaqi(object):
 #     print(li)
 #     tp = tuple(Feibonaqi(6))
 #     print(tp)
+
+#生成器实现斐波那契数列
+def fei(n):
+    current = 0
+    num1,num2 = 0,1
+    while current < n:
+        num = num1
+        num1,num2 = num2,num1+num2
+        current += 1
+        yield num
+    return "done"
+F = fei(5)
+print(next(F))
+print(next(F))
+print(next(F))
+print(next(F))
+print(next(F))
+print(next(F))
